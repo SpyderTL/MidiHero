@@ -1,6 +1,6 @@
 ﻿namespace MidiHero
 {
-	partial class Form1
+	partial class SongForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,13 +28,21 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
+			this.SuspendLayout();
+			// 
+			// SongForm
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Text = "Form1";
+			this.BackColor = System.Drawing.Color.Black;
+			this.ClientSize = new System.Drawing.Size(1008, 747);
+			this.Name = "SongForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "Midi Hero v1.0";
+			this.ResumeLayout(false);
+
 		}
 
 		#endregion
 	}
 }
-
