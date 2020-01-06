@@ -12,8 +12,9 @@ namespace MidiHero
 	{
 		internal static SongForm Form;
 		internal static int Track;
+		internal static int Channel;
 		internal static int Next;
-		internal static Panel[,] Panels;
+		internal static Panel[] Panels;
 		internal static System.Threading.Timer Timer;
 
 		internal static void Show()
@@ -26,23 +27,19 @@ namespace MidiHero
 
 			Form.Show();
 
-			Panels = new Panel[Guitar.Tuning.Length, 24];
+			Panels = new Panel[32];
 
-			for (var x = 0; x < Guitar.Tuning.Length; x++)
+			for (var x = 0; x < Panels.Length; x++)
 			{
-				for (var y = 0; y < 24; y++)
-				{
-					var panel = new Panel();
+				var panel = new Panel();
 
-					panel.Location = new Point(y == 0 ? 32 : (y * 40) + 16, (x * 32) + 280);
-					panel.Size = new Size(y == 0 ? 16 : 39, 31);
+				panel.Location = new Point(20, 280);
+				panel.Size = new Size(19, 100);
+				panel.BackColor = Color.White;
 
-					panel.BackColor = Color.Gray;
+				Form.Controls.Add(panel);
 
-					Form.Controls.Add(panel);
-
-					Panels[x, y] = panel;
-				}
+				Panels[x] = panel;
 			}
 
 			Next = 0;
@@ -88,24 +85,17 @@ namespace MidiHero
 			{
 				var e = Song.Tracks[Track].Events[Next];
 
-				for (int x = 0; x < Guitar.Tuning.Length; x++)
+				if (e.Channel == Channel)
 				{
-					if (e.Type == Song.EventType.NoteOn)
+					for (int x = 0; x < Panels.Length; x++)
 					{
-						if (e.Value >= Guitar.Tuning[x] &&
-							e.Value < Guitar.Tuning[x] + 24)
+						if (e.Type == Song.EventType.NoteOn)
 						{
-							Panels[x, e.Value - Guitar.Tuning[x]].BackColor = e.Value2 != 0 ? Color.Lime : Color.Gray;
-							//break;
+							Panels[x].BackColor = e.Value2 != 0 ? Color.Lime : Color.Gray;
 						}
-					}
-					else if (e.Type == Song.EventType.NoteOff)
-					{
-						if (e.Value >= Guitar.Tuning[x] &&
-							e.Value < Guitar.Tuning[x] + 24)
+						else if (e.Type == Song.EventType.NoteOff)
 						{
-							Panels[x, e.Value - Guitar.Tuning[x]].BackColor = Color.Gray;
-							//break;
+							Panels[x].BackColor = Color.Gray;
 						}
 					}
 				}
@@ -114,40 +104,16 @@ namespace MidiHero
 			}
 		}
 
-		//internal static void Update()
-		//{
-		//	for (int x = 0; x < Guitar.Tuning.Length; x++)
-		//		for (int y = 0; y < 24; y++)
-		//			Panels[x, y].BackColor = Color.Gray;
+		internal class Ellipse : Panel
+		{
+			protected override void OnPaintBackground(PaintEventArgs e)
+			{
+				var brush = new SolidBrush(BackColor);
 
-		//	if (SongPlayer.Playing[Track])
-		//	{
-		//		var next = SongPlayer.Next[Track];
-		//		var e = Song.Tracks[Track].Events[Math.Max(next - 1, 0)];
+				e.Graphics.FillEllipse(brush, e.ClipRectangle);
 
-		//		for (int x = 0; x < Guitar.Tuning.Length; x++)
-		//		{
-		//			if (e.Type == Song.EventType.NoteOn &&
-		//				e.Value2 != 0)
-		//			{
-		//				if (e.Value >= Guitar.Tuning[x] &&
-		//					e.Value < Guitar.Tuning[x] + 24)
-		//				{
-		//					Panels[x, e.Value - Guitar.Tuning[x]].BackColor = Color.Lime;
-		//					//break;
-		//				}
-		//			}
-		//			//else if (e.Type == Song.EventType.NoteOff)
-		//			//{
-		//			//	if (e.Value >= Guitar.Tuning[x] &&
-		//			//		e.Value < Guitar.Tuning[x] + 24)
-		//			//	{
-		//			//		Panels[x, e.Value - Guitar.Tuning[x]].BackColor = Color.Gray;
-		//			//		break;
-		//			//	}
-		//			//}
-		//		}
-		//	}
-		//}
+				brush.Dispose();
+			}
+		}
 	}
 }

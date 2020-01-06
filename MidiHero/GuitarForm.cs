@@ -89,7 +89,7 @@ namespace MidiHero
 			{
 				var e = Song.Tracks[Track].Events[Next];
 
-				if(e.Channel == Channel)
+				if (e.Channel == Channel)
 				{
 					for (int x = 0; x < Guitar.Tuning.Length; x++)
 					{
