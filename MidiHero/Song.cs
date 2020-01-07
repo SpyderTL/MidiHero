@@ -36,7 +36,8 @@ namespace MidiHero
 			PitchBend,
 			SetTempo,
 			Delay,
-			ChannelPressure
+			ChannelPressure,
+			KeyPressure
 		}
 	}
 }

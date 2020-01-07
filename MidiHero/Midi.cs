@@ -44,6 +44,13 @@ namespace MidiHero
 			//System.Diagnostics.Debug.WriteLine(result);
 		}
 
+		public static void KeyPressure(int channel, int note, int velocity)
+		{
+			var result = midiOutShortMsg(Handle, 0xA0u | (uint)channel | ((uint)note << 8) | ((uint)velocity << 16));
+
+			//System.Diagnostics.Debug.WriteLine(result);
+		}
+
 		public static void ProgramChange(int channel, int patch)
 		{
 			var result = midiOutShortMsg(Handle, 0xC0u | (uint)channel | ((uint)patch << 8));

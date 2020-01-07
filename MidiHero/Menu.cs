@@ -27,9 +27,14 @@ namespace MidiHero
 		{
 			Form.InstrumentsListBox.Items.Clear();
 
-			var patches = Song.Tracks[Form.TrackListBox.SelectedIndex].Events.Where(x => x.Channel == (int)Form.ChannelsListBox.SelectedItem && x.Type == Song.EventType.ProgramChange).Select(x => x.Value).Distinct().OrderBy(x => x).ToArray();
+			if ((int)Form.ChannelsListBox.SelectedItem == 9)
+				Form.InstrumentsListBox.Items.Add("Drums");
+			else
+			{
+				var patches = Song.Tracks[Form.TrackListBox.SelectedIndex].Events.Where(x => x.Channel == (int)Form.ChannelsListBox.SelectedItem && x.Type == Song.EventType.ProgramChange).Select(x => x.Value).Distinct().OrderBy(x => x).ToArray();
 
-			Form.InstrumentsListBox.Items.AddRange(patches.Select(x => Instruments[x]).ToArray());
+				Form.InstrumentsListBox.Items.AddRange(patches.Select(x => Instruments[x]).ToArray());
+			}
 		}
 
 		private static void TrackListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -164,6 +169,7 @@ namespace MidiHero
 			else if (Form.DrumsButton.Checked)
 			{
 				DrumsForm.Track = Form.TrackListBox.SelectedIndex;
+				DrumsForm.Channel = (int)Form.ChannelsListBox.SelectedItem;
 				DrumsForm.Show();
 			}
 		}

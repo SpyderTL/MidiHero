@@ -107,6 +107,10 @@ namespace MidiHero
 								Midi.NoteOff(e.Channel, e.Value, e.Value2);
 								break;
 
+							case Song.EventType.KeyPressure:
+								Midi.KeyPressure(e.Channel, e.Value, e.Value2);
+								break;
+
 							case Song.EventType.ProgramChange:
 								Midi.ProgramChange(e.Channel, e.Value);
 								break;

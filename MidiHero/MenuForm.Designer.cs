@@ -35,6 +35,9 @@
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.TrackListBox = new System.Windows.Forms.ListBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.FiveStringButton = new System.Windows.Forms.RadioButton();
+			this.SevenStringButton = new System.Windows.Forms.RadioButton();
+			this.EightStringButton = new System.Windows.Forms.RadioButton();
 			this.DrumsButton = new System.Windows.Forms.RadioButton();
 			this.KeyboardButton = new System.Windows.Forms.RadioButton();
 			this.BassGuitarButton = new System.Windows.Forms.RadioButton();
@@ -42,12 +45,9 @@
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.PauseCheckbox = new System.Windows.Forms.CheckBox();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
-			this.ChannelsListBox = new System.Windows.Forms.CheckedListBox();
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
-			this.InstrumentsListBox = new System.Windows.Forms.CheckedListBox();
-			this.EightStringButton = new System.Windows.Forms.RadioButton();
-			this.SevenStringButton = new System.Windows.Forms.RadioButton();
-			this.FiveStringButton = new System.Windows.Forms.RadioButton();
+			this.ChannelsListBox = new System.Windows.Forms.ListBox();
+			this.InstrumentsListBox = new System.Windows.Forms.ListBox();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -136,10 +136,45 @@
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Instrument";
 			// 
+			// FiveStringButton
+			// 
+			this.FiveStringButton.Appearance = System.Windows.Forms.Appearance.Button;
+			this.FiveStringButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.FiveStringButton.Location = new System.Drawing.Point(162, 133);
+			this.FiveStringButton.Name = "FiveStringButton";
+			this.FiveStringButton.Size = new System.Drawing.Size(150, 36);
+			this.FiveStringButton.TabIndex = 13;
+			this.FiveStringButton.Text = "5 String";
+			this.FiveStringButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.FiveStringButton.UseVisualStyleBackColor = true;
+			// 
+			// SevenStringButton
+			// 
+			this.SevenStringButton.Appearance = System.Windows.Forms.Appearance.Button;
+			this.SevenStringButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.SevenStringButton.Location = new System.Drawing.Point(6, 91);
+			this.SevenStringButton.Name = "SevenStringButton";
+			this.SevenStringButton.Size = new System.Drawing.Size(150, 36);
+			this.SevenStringButton.TabIndex = 12;
+			this.SevenStringButton.Text = "7 String";
+			this.SevenStringButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.SevenStringButton.UseVisualStyleBackColor = true;
+			// 
+			// EightStringButton
+			// 
+			this.EightStringButton.Appearance = System.Windows.Forms.Appearance.Button;
+			this.EightStringButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.EightStringButton.Location = new System.Drawing.Point(6, 133);
+			this.EightStringButton.Name = "EightStringButton";
+			this.EightStringButton.Size = new System.Drawing.Size(150, 36);
+			this.EightStringButton.TabIndex = 11;
+			this.EightStringButton.Text = "8 String";
+			this.EightStringButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.EightStringButton.UseVisualStyleBackColor = true;
+			// 
 			// DrumsButton
 			// 
 			this.DrumsButton.Appearance = System.Windows.Forms.Appearance.Button;
-			this.DrumsButton.Enabled = false;
 			this.DrumsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.DrumsButton.Location = new System.Drawing.Point(474, 19);
 			this.DrumsButton.Name = "DrumsButton";
@@ -217,15 +252,6 @@
 			this.groupBox5.TabStop = false;
 			this.groupBox5.Text = "Channels";
 			// 
-			// ChannelsListBox
-			// 
-			this.ChannelsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.ChannelsListBox.FormattingEnabled = true;
-			this.ChannelsListBox.Location = new System.Drawing.Point(3, 16);
-			this.ChannelsListBox.Name = "ChannelsListBox";
-			this.ChannelsListBox.Size = new System.Drawing.Size(182, 350);
-			this.ChannelsListBox.TabIndex = 0;
-			// 
 			// groupBox6
 			// 
 			this.groupBox6.Controls.Add(this.InstrumentsListBox);
@@ -236,6 +262,15 @@
 			this.groupBox6.TabStop = false;
 			this.groupBox6.Text = "Instruments";
 			// 
+			// ChannelsListBox
+			// 
+			this.ChannelsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.ChannelsListBox.FormattingEnabled = true;
+			this.ChannelsListBox.Location = new System.Drawing.Point(3, 16);
+			this.ChannelsListBox.Name = "ChannelsListBox";
+			this.ChannelsListBox.Size = new System.Drawing.Size(182, 350);
+			this.ChannelsListBox.TabIndex = 5;
+			// 
 			// InstrumentsListBox
 			// 
 			this.InstrumentsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -243,43 +278,7 @@
 			this.InstrumentsListBox.Location = new System.Drawing.Point(3, 16);
 			this.InstrumentsListBox.Name = "InstrumentsListBox";
 			this.InstrumentsListBox.Size = new System.Drawing.Size(182, 350);
-			this.InstrumentsListBox.TabIndex = 0;
-			// 
-			// EightStringButton
-			// 
-			this.EightStringButton.Appearance = System.Windows.Forms.Appearance.Button;
-			this.EightStringButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.EightStringButton.Location = new System.Drawing.Point(6, 133);
-			this.EightStringButton.Name = "EightStringButton";
-			this.EightStringButton.Size = new System.Drawing.Size(150, 36);
-			this.EightStringButton.TabIndex = 11;
-			this.EightStringButton.Text = "8 String";
-			this.EightStringButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.EightStringButton.UseVisualStyleBackColor = true;
-			// 
-			// SevenStringButton
-			// 
-			this.SevenStringButton.Appearance = System.Windows.Forms.Appearance.Button;
-			this.SevenStringButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SevenStringButton.Location = new System.Drawing.Point(6, 91);
-			this.SevenStringButton.Name = "SevenStringButton";
-			this.SevenStringButton.Size = new System.Drawing.Size(150, 36);
-			this.SevenStringButton.TabIndex = 12;
-			this.SevenStringButton.Text = "7 String";
-			this.SevenStringButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.SevenStringButton.UseVisualStyleBackColor = true;
-			// 
-			// FiveStringButton
-			// 
-			this.FiveStringButton.Appearance = System.Windows.Forms.Appearance.Button;
-			this.FiveStringButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.FiveStringButton.Location = new System.Drawing.Point(162, 133);
-			this.FiveStringButton.Name = "FiveStringButton";
-			this.FiveStringButton.Size = new System.Drawing.Size(150, 36);
-			this.FiveStringButton.TabIndex = 13;
-			this.FiveStringButton.Text = "5 String";
-			this.FiveStringButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.FiveStringButton.UseVisualStyleBackColor = true;
+			this.InstrumentsListBox.TabIndex = 5;
 			// 
 			// MenuForm
 			// 
@@ -324,11 +323,11 @@
 		public System.Windows.Forms.CheckBox PauseCheckbox;
 		private System.Windows.Forms.GroupBox groupBox5;
 		private System.Windows.Forms.GroupBox groupBox6;
-		public System.Windows.Forms.CheckedListBox ChannelsListBox;
-		public System.Windows.Forms.CheckedListBox InstrumentsListBox;
 		public System.Windows.Forms.RadioButton SevenStringButton;
 		public System.Windows.Forms.RadioButton EightStringButton;
 		public System.Windows.Forms.RadioButton FiveStringButton;
+		public System.Windows.Forms.ListBox ChannelsListBox;
+		public System.Windows.Forms.ListBox InstrumentsListBox;
 	}
 }
 

@@ -21,7 +21,7 @@
 		59	Ride Cymbal 2
 	Hi Hat
 		42	Closed Hi-Hat 
-		46	Open Hi-Hat 
+		46	Open Hi-Hat
 	Other
 		37	Side Stick
 		39	Hand Clap

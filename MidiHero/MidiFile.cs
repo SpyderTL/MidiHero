@@ -69,6 +69,7 @@ namespace MidiHero
 						e.Delay = (int)delay;
 
 						events.Add(e);
+
 						break;
 				}
 
@@ -95,7 +96,7 @@ namespace MidiHero
 					return new Song.Event { Type = Song.EventType.NoteOn, Channel = channel, Value = reader.ReadByte(), Value2 = reader.ReadByte() };
 
 				case 0xa:
-					throw new NotSupportedException();
+					return new Song.Event { Type = Song.EventType.KeyPressure, Channel = channel, Value = reader.ReadByte(), Value2 = reader.ReadByte() };
 
 				case 0xb:
 					var value1 = reader.ReadByte();
