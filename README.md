@@ -7,7 +7,7 @@ Try VirtualMIDISynth for high quality MIDI SF2 soundfont support.
 https://coolsoft.altervista.org/en/virtualmidisynth
 
 # Getting Started
-1. Click Browse and select a MIDI button.
+1. Click Browse and select a MIDI file.
 2. Choose a Track from the track list.
 3. Choose a Channel from the channel list.  The instrument list shows all of the instruments used in this channel.
 4. Choose the instrument you want to learn.
