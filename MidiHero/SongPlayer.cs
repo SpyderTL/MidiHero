@@ -79,71 +79,76 @@ namespace MidiHero
 				var elapsed = now - last;
 				last = now;
 
-				var microseconds = elapsed.Ticks * 0.1;
-				var beats = microseconds / MillisecondsPerBeat;
-				var ticks = beats * TicksPerBeat * Speed;
-
-				var playing = false;
-
-				for (int track = 0; track < Tracks.Length; track++)
+				if (!Paused)
 				{
-					if (Playing[track])
+					var microseconds = elapsed.Ticks * 0.1;
+					var beats = microseconds / MillisecondsPerBeat;
+					var ticks = beats * TicksPerBeat * Speed;
+
+					var playing = false;
+
+					for (int track = 0; track < Tracks.Length; track++)
 					{
-						Timers[track] -= ticks;
-
-						playing = true;
-					}
-
-					while (Playing[track] && Timers[track] <= 0)
-					{
-						var e = Tracks[track].Events[Next[track]];
-
-						switch (e.Type)
+						if (Playing[track])
 						{
-							case Song.EventType.NoteOn:
-								Midi.NoteOn(e.Channel, e.Value, e.Value2);
-								break;
+							Timers[track] -= ticks;
 
-							case Song.EventType.NoteOff:
-								Midi.NoteOff(e.Channel, e.Value, e.Value2);
-								break;
-
-							case Song.EventType.KeyPressure:
-								Midi.KeyPressure(e.Channel, e.Value, e.Value2);
-								break;
-
-							case Song.EventType.ProgramChange:
-								Midi.ProgramChange(e.Channel, e.Value);
-								break;
-
-							case Song.EventType.ControlChange:
-								Midi.ControlChange(e.Channel, e.Value, e.Value2);
-								break;
-
-							case Song.EventType.PitchBend:
-								Midi.PitchBend(e.Channel, e.Value);
-								break;
-
-							case Song.EventType.ChannelPressure:
-								Midi.ChannelPressure(e.Channel, e.Value);
-								break;
-
-							case Song.EventType.SetTempo:
-								MillisecondsPerBeat = e.Value;
-								break;
+							playing = true;
 						}
 
-						Next[track]++;
+						while (Playing[track] && Timers[track] <= 0)
+						{
+							var e = Tracks[track].Events[Next[track]];
 
-						if (Next[track] == Tracks[track].Events.Length)
-							Playing[track] = false;
-						else
-							Timers[track] += Tracks[track].Events[Next[track]].Delay;
+							switch (e.Type)
+							{
+								case Song.EventType.NoteOn:
+									Midi.NoteOn(e.Channel, e.Value, e.Value2);
+									break;
+
+								case Song.EventType.NoteOff:
+									Midi.NoteOff(e.Channel, e.Value, e.Value2);
+									break;
+
+								case Song.EventType.KeyPressure:
+									Midi.KeyPressure(e.Channel, e.Value, e.Value2);
+									break;
+
+								case Song.EventType.ProgramChange:
+									Midi.ProgramChange(e.Channel, e.Value);
+									break;
+
+								case Song.EventType.ControlChange:
+									Midi.ControlChange(e.Channel, e.Value, e.Value2);
+									break;
+
+								case Song.EventType.PitchBend:
+									Midi.PitchBend(e.Channel, e.Value);
+									break;
+
+								case Song.EventType.ChannelPressure:
+									Midi.ChannelPressure(e.Channel, e.Value);
+									break;
+
+								case Song.EventType.SetTempo:
+									MillisecondsPerBeat = e.Value;
+									break;
+							}
+
+							Next[track]++;
+
+							if (Next[track] == Tracks[track].Events.Length)
+								Playing[track] = false;
+							else
+								Timers[track] += Tracks[track].Events[Next[track]].Delay;
+						}
 					}
-				}
 
-				if (!playing)
-					Stopped = true;
+					if (!playing)
+						Stopped = true;
+					else
+						System.Threading.Thread.Sleep(10);
+				}
 				else
 					System.Threading.Thread.Sleep(10);
 			}

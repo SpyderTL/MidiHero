@@ -277,6 +277,7 @@
 			this.InstrumentsListBox.FormattingEnabled = true;
 			this.InstrumentsListBox.Location = new System.Drawing.Point(3, 16);
 			this.InstrumentsListBox.Name = "InstrumentsListBox";
+			this.InstrumentsListBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
 			this.InstrumentsListBox.Size = new System.Drawing.Size(182, 350);
 			this.InstrumentsListBox.TabIndex = 5;
 			// 
@@ -290,7 +291,7 @@
 			this.groupBox7.Controls.Add(this.Speed70);
 			this.groupBox7.Controls.Add(this.Speed60);
 			this.groupBox7.Controls.Add(this.Speed50);
-			this.groupBox7.Location = new System.Drawing.Point(594, 60);
+			this.groupBox7.Location = new System.Drawing.Point(788, 60);
 			this.groupBox7.Name = "groupBox7";
 			this.groupBox7.Size = new System.Drawing.Size(188, 369);
 			this.groupBox7.TabIndex = 10;
@@ -398,7 +399,7 @@
 			// groupBox8
 			// 
 			this.groupBox8.Controls.Add(this.OutputListBox);
-			this.groupBox8.Location = new System.Drawing.Point(788, 60);
+			this.groupBox8.Location = new System.Drawing.Point(594, 60);
 			this.groupBox8.Name = "groupBox8";
 			this.groupBox8.Size = new System.Drawing.Size(188, 369);
 			this.groupBox8.TabIndex = 11;

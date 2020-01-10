@@ -26,6 +26,11 @@ namespace MidiHero
 			Form.Text = Song.Name + " - Midi Hero v1.0";
 
 			Form.FormClosing += Form_FormClosing;
+			Form.PlayButton.Click += PlayButton_Click;
+			Form.PauseButton.Click += PauseButton_Click;
+			Form.RestartButton.Click += RestartButton_Click;
+			Form.IncreaseSpeedButton.Click += IncreaseSpeedButton_Click;
+			Form.DecreaseSpeedButton.Click += DecreaseSpeedButton_Click;
 
 			Form.Show();
 
@@ -51,6 +56,48 @@ namespace MidiHero
 			Next = 0;
 
 			Timer = new System.Threading.Timer(Timer_Callback, null, TimeSpan.Zero, TimeSpan.FromMilliseconds(10));
+		}
+
+		private static void PlayButton_Click(object sender, EventArgs e)
+		{
+			Form.PlayButton.Visible = false;
+			Form.PauseButton.Visible = true;
+
+			SongPlayer.Resume();
+		}
+
+		private static void PauseButton_Click(object sender, EventArgs e)
+		{
+			Form.PauseButton.Visible = false;
+			Form.PlayButton.Visible = true;
+
+			SongPlayer.Pause();
+		}
+
+		private static void RestartButton_Click(object sender, EventArgs e)
+		{
+			Form.PlayButton.Visible = false;
+			Form.PauseButton.Visible = true;
+
+			SongPlayer.Stop();
+			SongPlayer.Play();
+		}
+
+		private static void IncreaseSpeedButton_Click(object sender, EventArgs e)
+		{
+			SongPlayer.Speed += 0.1;
+
+			Form.SpeedLabel.Text = "Speed: " + SongPlayer.Speed.ToString("P");
+		}
+
+		private static void DecreaseSpeedButton_Click(object sender, EventArgs e)
+		{
+			if (SongPlayer.Speed < 0.1)
+				return;
+
+			SongPlayer.Speed -= 0.1;
+
+			Form.SpeedLabel.Text = "Speed: " + SongPlayer.Speed.ToString("P");
 		}
 
 		private static void Form_FormClosing(object sender, FormClosingEventArgs e)
