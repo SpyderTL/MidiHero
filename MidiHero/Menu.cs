@@ -41,7 +41,7 @@ namespace MidiHero
 		{
 			Form.ChannelsListBox.Items.Clear();
 
-			var channels = Song.Tracks[Form.TrackListBox.SelectedIndex].Events.Select(x => x.Channel).Distinct().OrderBy(x => x).Cast<object>().ToArray();
+			var channels = Song.Tracks[Form.TrackListBox.SelectedIndex].Events.Where(x => x.Type != Song.EventType.Delay).Select(x => x.Channel).Distinct().OrderBy(x => x).Cast<object>().ToArray();
 
 			Form.ChannelsListBox.Items.AddRange(channels);
 
