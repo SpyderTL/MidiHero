@@ -20,7 +20,22 @@ namespace MidiHero
 			Form.BrowseButton.Click += BrowseButton_Click;
 			Form.StartButton.Click += StartButton_Click;
 
+			Refresh();
+
 			Application.Run(Form);
+		}
+
+		private static void Refresh()
+		{
+			Midi.Refresh();
+
+			Form.OutputListBox.Items.Clear();
+
+			for (var x = 0; x < Midi.Devices.Length; x++)
+				Form.OutputListBox.Items.Add(Midi.Devices[x].Item2);
+
+			if (Form.OutputListBox.Items.Count != 0)
+				Form.OutputListBox.SelectedIndex = 0;
 		}
 
 		private static void ChannelsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,6 +93,8 @@ namespace MidiHero
 
 		private static void StartButton_Click(object sender, EventArgs e)
 		{
+			Midi.Device = Form.OutputListBox.SelectedIndex;
+
 			if (Form.Speed50.Checked)
 				SongPlayer.Speed = 0.5;
 			else if (Form.Speed60.Checked)

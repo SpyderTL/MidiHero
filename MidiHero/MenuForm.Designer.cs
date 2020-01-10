@@ -48,20 +48,23 @@
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
 			this.InstrumentsListBox = new System.Windows.Forms.ListBox();
 			this.groupBox7 = new System.Windows.Forms.GroupBox();
-			this.Speed50 = new System.Windows.Forms.RadioButton();
-			this.Speed60 = new System.Windows.Forms.RadioButton();
-			this.Speed70 = new System.Windows.Forms.RadioButton();
-			this.Speed80 = new System.Windows.Forms.RadioButton();
-			this.Speed90 = new System.Windows.Forms.RadioButton();
-			this.Speed100 = new System.Windows.Forms.RadioButton();
-			this.Speed125 = new System.Windows.Forms.RadioButton();
 			this.Speed150 = new System.Windows.Forms.RadioButton();
+			this.Speed125 = new System.Windows.Forms.RadioButton();
+			this.Speed100 = new System.Windows.Forms.RadioButton();
+			this.Speed90 = new System.Windows.Forms.RadioButton();
+			this.Speed80 = new System.Windows.Forms.RadioButton();
+			this.Speed70 = new System.Windows.Forms.RadioButton();
+			this.Speed60 = new System.Windows.Forms.RadioButton();
+			this.Speed50 = new System.Windows.Forms.RadioButton();
+			this.groupBox8 = new System.Windows.Forms.GroupBox();
+			this.OutputListBox = new System.Windows.Forms.ListBox();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.groupBox5.SuspendLayout();
 			this.groupBox6.SuspendLayout();
 			this.groupBox7.SuspendLayout();
+			this.groupBox8.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// groupBox1
@@ -294,65 +297,29 @@
 			this.groupBox7.TabStop = false;
 			this.groupBox7.Text = "Speed";
 			// 
-			// Speed50
+			// Speed150
 			// 
-			this.Speed50.Appearance = System.Windows.Forms.Appearance.Button;
-			this.Speed50.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Speed50.Location = new System.Drawing.Point(6, 19);
-			this.Speed50.Name = "Speed50";
-			this.Speed50.Size = new System.Drawing.Size(176, 36);
-			this.Speed50.TabIndex = 14;
-			this.Speed50.Text = "50%";
-			this.Speed50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.Speed50.UseVisualStyleBackColor = true;
+			this.Speed150.Appearance = System.Windows.Forms.Appearance.Button;
+			this.Speed150.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Speed150.Location = new System.Drawing.Point(6, 313);
+			this.Speed150.Name = "Speed150";
+			this.Speed150.Size = new System.Drawing.Size(176, 36);
+			this.Speed150.TabIndex = 21;
+			this.Speed150.Text = "150%";
+			this.Speed150.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.Speed150.UseVisualStyleBackColor = true;
 			// 
-			// Speed60
+			// Speed125
 			// 
-			this.Speed60.Appearance = System.Windows.Forms.Appearance.Button;
-			this.Speed60.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Speed60.Location = new System.Drawing.Point(6, 61);
-			this.Speed60.Name = "Speed60";
-			this.Speed60.Size = new System.Drawing.Size(176, 36);
-			this.Speed60.TabIndex = 15;
-			this.Speed60.Text = "60%";
-			this.Speed60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.Speed60.UseVisualStyleBackColor = true;
-			// 
-			// Speed70
-			// 
-			this.Speed70.Appearance = System.Windows.Forms.Appearance.Button;
-			this.Speed70.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Speed70.Location = new System.Drawing.Point(6, 103);
-			this.Speed70.Name = "Speed70";
-			this.Speed70.Size = new System.Drawing.Size(176, 36);
-			this.Speed70.TabIndex = 16;
-			this.Speed70.Text = "70%";
-			this.Speed70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.Speed70.UseVisualStyleBackColor = true;
-			// 
-			// Speed80
-			// 
-			this.Speed80.Appearance = System.Windows.Forms.Appearance.Button;
-			this.Speed80.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Speed80.Location = new System.Drawing.Point(6, 145);
-			this.Speed80.Name = "Speed80";
-			this.Speed80.Size = new System.Drawing.Size(176, 36);
-			this.Speed80.TabIndex = 17;
-			this.Speed80.Text = "80%";
-			this.Speed80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.Speed80.UseVisualStyleBackColor = true;
-			// 
-			// Speed90
-			// 
-			this.Speed90.Appearance = System.Windows.Forms.Appearance.Button;
-			this.Speed90.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Speed90.Location = new System.Drawing.Point(6, 187);
-			this.Speed90.Name = "Speed90";
-			this.Speed90.Size = new System.Drawing.Size(176, 36);
-			this.Speed90.TabIndex = 18;
-			this.Speed90.Text = "90%";
-			this.Speed90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.Speed90.UseVisualStyleBackColor = true;
+			this.Speed125.Appearance = System.Windows.Forms.Appearance.Button;
+			this.Speed125.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Speed125.Location = new System.Drawing.Point(6, 271);
+			this.Speed125.Name = "Speed125";
+			this.Speed125.Size = new System.Drawing.Size(176, 36);
+			this.Speed125.TabIndex = 20;
+			this.Speed125.Text = "125%";
+			this.Speed125.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.Speed125.UseVisualStyleBackColor = true;
 			// 
 			// Speed100
 			// 
@@ -368,35 +335,91 @@
 			this.Speed100.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.Speed100.UseVisualStyleBackColor = true;
 			// 
-			// Speed125
+			// Speed90
 			// 
-			this.Speed125.Appearance = System.Windows.Forms.Appearance.Button;
-			this.Speed125.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Speed125.Location = new System.Drawing.Point(6, 271);
-			this.Speed125.Name = "Speed125";
-			this.Speed125.Size = new System.Drawing.Size(176, 36);
-			this.Speed125.TabIndex = 20;
-			this.Speed125.Text = "125%";
-			this.Speed125.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.Speed125.UseVisualStyleBackColor = true;
+			this.Speed90.Appearance = System.Windows.Forms.Appearance.Button;
+			this.Speed90.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Speed90.Location = new System.Drawing.Point(6, 187);
+			this.Speed90.Name = "Speed90";
+			this.Speed90.Size = new System.Drawing.Size(176, 36);
+			this.Speed90.TabIndex = 18;
+			this.Speed90.Text = "90%";
+			this.Speed90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.Speed90.UseVisualStyleBackColor = true;
 			// 
-			// Speed150
+			// Speed80
 			// 
-			this.Speed150.Appearance = System.Windows.Forms.Appearance.Button;
-			this.Speed150.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Speed150.Location = new System.Drawing.Point(6, 313);
-			this.Speed150.Name = "Speed150";
-			this.Speed150.Size = new System.Drawing.Size(176, 36);
-			this.Speed150.TabIndex = 21;
-			this.Speed150.Text = "150%";
-			this.Speed150.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.Speed150.UseVisualStyleBackColor = true;
+			this.Speed80.Appearance = System.Windows.Forms.Appearance.Button;
+			this.Speed80.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Speed80.Location = new System.Drawing.Point(6, 145);
+			this.Speed80.Name = "Speed80";
+			this.Speed80.Size = new System.Drawing.Size(176, 36);
+			this.Speed80.TabIndex = 17;
+			this.Speed80.Text = "80%";
+			this.Speed80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.Speed80.UseVisualStyleBackColor = true;
+			// 
+			// Speed70
+			// 
+			this.Speed70.Appearance = System.Windows.Forms.Appearance.Button;
+			this.Speed70.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Speed70.Location = new System.Drawing.Point(6, 103);
+			this.Speed70.Name = "Speed70";
+			this.Speed70.Size = new System.Drawing.Size(176, 36);
+			this.Speed70.TabIndex = 16;
+			this.Speed70.Text = "70%";
+			this.Speed70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.Speed70.UseVisualStyleBackColor = true;
+			// 
+			// Speed60
+			// 
+			this.Speed60.Appearance = System.Windows.Forms.Appearance.Button;
+			this.Speed60.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Speed60.Location = new System.Drawing.Point(6, 61);
+			this.Speed60.Name = "Speed60";
+			this.Speed60.Size = new System.Drawing.Size(176, 36);
+			this.Speed60.TabIndex = 15;
+			this.Speed60.Text = "60%";
+			this.Speed60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.Speed60.UseVisualStyleBackColor = true;
+			// 
+			// Speed50
+			// 
+			this.Speed50.Appearance = System.Windows.Forms.Appearance.Button;
+			this.Speed50.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Speed50.Location = new System.Drawing.Point(6, 19);
+			this.Speed50.Name = "Speed50";
+			this.Speed50.Size = new System.Drawing.Size(176, 36);
+			this.Speed50.TabIndex = 14;
+			this.Speed50.Text = "50%";
+			this.Speed50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.Speed50.UseVisualStyleBackColor = true;
+			// 
+			// groupBox8
+			// 
+			this.groupBox8.Controls.Add(this.OutputListBox);
+			this.groupBox8.Location = new System.Drawing.Point(788, 60);
+			this.groupBox8.Name = "groupBox8";
+			this.groupBox8.Size = new System.Drawing.Size(188, 369);
+			this.groupBox8.TabIndex = 11;
+			this.groupBox8.TabStop = false;
+			this.groupBox8.Text = "Output";
+			// 
+			// OutputListBox
+			// 
+			this.OutputListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.OutputListBox.FormattingEnabled = true;
+			this.OutputListBox.Location = new System.Drawing.Point(3, 16);
+			this.OutputListBox.Name = "OutputListBox";
+			this.OutputListBox.Size = new System.Drawing.Size(182, 350);
+			this.OutputListBox.TabIndex = 5;
 			// 
 			// MenuForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1008, 729);
+			this.Controls.Add(this.groupBox8);
 			this.Controls.Add(this.groupBox7);
 			this.Controls.Add(this.groupBox6);
 			this.Controls.Add(this.groupBox5);
@@ -414,6 +437,7 @@
 			this.groupBox5.ResumeLayout(false);
 			this.groupBox6.ResumeLayout(false);
 			this.groupBox7.ResumeLayout(false);
+			this.groupBox8.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -448,6 +472,8 @@
 		public System.Windows.Forms.RadioButton Speed70;
 		public System.Windows.Forms.RadioButton Speed60;
 		public System.Windows.Forms.RadioButton Speed50;
+		private System.Windows.Forms.GroupBox groupBox8;
+		public System.Windows.Forms.ListBox OutputListBox;
 	}
 }
 
