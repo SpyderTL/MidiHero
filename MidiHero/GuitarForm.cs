@@ -19,6 +19,8 @@ namespace MidiHero
 
 		internal static void Show()
 		{
+			Power.AlwaysOn();
+
 			Form = new SongForm();
 
 			Form.Text = Song.Name + " - Midi Hero v1.0";
@@ -59,6 +61,8 @@ namespace MidiHero
 			Timer.Dispose();
 
 			Form = null;
+
+			Power.Reset();
 		}
 
 		private static void Timer_Callback(object state)

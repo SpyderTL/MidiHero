@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="Midi.cs" />
     <Compile Include="MidiFile.cs" />
+    <Compile Include="Power.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Song.cs" />

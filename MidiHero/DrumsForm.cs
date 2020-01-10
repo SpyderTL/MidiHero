@@ -20,9 +20,12 @@ namespace MidiHero
 		internal static bool HiHat;
 		internal static bool Rim;
 		internal static bool Bell;
+		internal static bool China;
 
 		internal static void Show()
 		{
+			Power.AlwaysOn();
+
 			Form = new SongForm();
 
 			Form.Text = Song.Name + " - Midi Hero v1.0";
@@ -118,6 +121,8 @@ namespace MidiHero
 			Timer.Dispose();
 
 			Form = null;
+
+			Power.Reset();
 		}
 
 		private static void Timer_Callback(object state)
@@ -179,6 +184,11 @@ namespace MidiHero
 								else if (e.Value == 51 ||
 									e.Value == 59)
 									Bell = false;
+								else if (e.Value == 52)
+									China = true;
+								else if (e.Value == 49 ||
+									e.Value == 57)
+									China = false;
 							}
 						}
 					}
@@ -200,6 +210,8 @@ namespace MidiHero
 					else if (drum == 5 && HiHat)
 						Panels[drum].BackColor = Color.FromArgb(128 - color, 128 - color, 128 + color);
 					else if (drum == 1 && Rim)
+						Panels[drum].BackColor = Color.FromArgb(128 - color, 128 - color, 128 + color);
+					else if (drum == 6 && China)
 						Panels[drum].BackColor = Color.FromArgb(128 - color, 128 - color, 128 + color);
 					else if (drum == 7 && Bell)
 						Panels[drum].BackColor = Color.FromArgb(128 - color, 128 - color, 128 + color);

@@ -43,17 +43,25 @@
 			this.BassGuitarButton = new System.Windows.Forms.RadioButton();
 			this.GuitarButton = new System.Windows.Forms.RadioButton();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
-			this.PauseCheckbox = new System.Windows.Forms.CheckBox();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
-			this.groupBox6 = new System.Windows.Forms.GroupBox();
 			this.ChannelsListBox = new System.Windows.Forms.ListBox();
+			this.groupBox6 = new System.Windows.Forms.GroupBox();
 			this.InstrumentsListBox = new System.Windows.Forms.ListBox();
+			this.groupBox7 = new System.Windows.Forms.GroupBox();
+			this.Speed50 = new System.Windows.Forms.RadioButton();
+			this.Speed60 = new System.Windows.Forms.RadioButton();
+			this.Speed70 = new System.Windows.Forms.RadioButton();
+			this.Speed80 = new System.Windows.Forms.RadioButton();
+			this.Speed90 = new System.Windows.Forms.RadioButton();
+			this.Speed100 = new System.Windows.Forms.RadioButton();
+			this.Speed125 = new System.Windows.Forms.RadioButton();
+			this.Speed150 = new System.Windows.Forms.RadioButton();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
-			this.groupBox4.SuspendLayout();
 			this.groupBox5.SuspendLayout();
 			this.groupBox6.SuspendLayout();
+			this.groupBox7.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// groupBox1
@@ -224,23 +232,12 @@
 			// 
 			// groupBox4
 			// 
-			this.groupBox4.Controls.Add(this.PauseCheckbox);
 			this.groupBox4.Location = new System.Drawing.Point(212, 617);
 			this.groupBox4.Name = "groupBox4";
 			this.groupBox4.Size = new System.Drawing.Size(673, 100);
 			this.groupBox4.TabIndex = 7;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Options";
-			// 
-			// PauseCheckbox
-			// 
-			this.PauseCheckbox.AutoSize = true;
-			this.PauseCheckbox.Location = new System.Drawing.Point(6, 19);
-			this.PauseCheckbox.Name = "PauseCheckbox";
-			this.PauseCheckbox.Size = new System.Drawing.Size(187, 17);
-			this.PauseCheckbox.TabIndex = 0;
-			this.PauseCheckbox.Text = "Wait for correct note to be played.";
-			this.PauseCheckbox.UseVisualStyleBackColor = true;
 			// 
 			// groupBox5
 			// 
@@ -252,6 +249,15 @@
 			this.groupBox5.TabStop = false;
 			this.groupBox5.Text = "Channels";
 			// 
+			// ChannelsListBox
+			// 
+			this.ChannelsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.ChannelsListBox.FormattingEnabled = true;
+			this.ChannelsListBox.Location = new System.Drawing.Point(3, 16);
+			this.ChannelsListBox.Name = "ChannelsListBox";
+			this.ChannelsListBox.Size = new System.Drawing.Size(182, 350);
+			this.ChannelsListBox.TabIndex = 5;
+			// 
 			// groupBox6
 			// 
 			this.groupBox6.Controls.Add(this.InstrumentsListBox);
@@ -262,15 +268,6 @@
 			this.groupBox6.TabStop = false;
 			this.groupBox6.Text = "Instruments";
 			// 
-			// ChannelsListBox
-			// 
-			this.ChannelsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.ChannelsListBox.FormattingEnabled = true;
-			this.ChannelsListBox.Location = new System.Drawing.Point(3, 16);
-			this.ChannelsListBox.Name = "ChannelsListBox";
-			this.ChannelsListBox.Size = new System.Drawing.Size(182, 350);
-			this.ChannelsListBox.TabIndex = 5;
-			// 
 			// InstrumentsListBox
 			// 
 			this.InstrumentsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -280,11 +277,127 @@
 			this.InstrumentsListBox.Size = new System.Drawing.Size(182, 350);
 			this.InstrumentsListBox.TabIndex = 5;
 			// 
+			// groupBox7
+			// 
+			this.groupBox7.Controls.Add(this.Speed150);
+			this.groupBox7.Controls.Add(this.Speed125);
+			this.groupBox7.Controls.Add(this.Speed100);
+			this.groupBox7.Controls.Add(this.Speed90);
+			this.groupBox7.Controls.Add(this.Speed80);
+			this.groupBox7.Controls.Add(this.Speed70);
+			this.groupBox7.Controls.Add(this.Speed60);
+			this.groupBox7.Controls.Add(this.Speed50);
+			this.groupBox7.Location = new System.Drawing.Point(594, 60);
+			this.groupBox7.Name = "groupBox7";
+			this.groupBox7.Size = new System.Drawing.Size(188, 369);
+			this.groupBox7.TabIndex = 10;
+			this.groupBox7.TabStop = false;
+			this.groupBox7.Text = "Speed";
+			// 
+			// Speed50
+			// 
+			this.Speed50.Appearance = System.Windows.Forms.Appearance.Button;
+			this.Speed50.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Speed50.Location = new System.Drawing.Point(6, 19);
+			this.Speed50.Name = "Speed50";
+			this.Speed50.Size = new System.Drawing.Size(176, 36);
+			this.Speed50.TabIndex = 14;
+			this.Speed50.Text = "50%";
+			this.Speed50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.Speed50.UseVisualStyleBackColor = true;
+			// 
+			// Speed60
+			// 
+			this.Speed60.Appearance = System.Windows.Forms.Appearance.Button;
+			this.Speed60.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Speed60.Location = new System.Drawing.Point(6, 61);
+			this.Speed60.Name = "Speed60";
+			this.Speed60.Size = new System.Drawing.Size(176, 36);
+			this.Speed60.TabIndex = 15;
+			this.Speed60.Text = "60%";
+			this.Speed60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.Speed60.UseVisualStyleBackColor = true;
+			// 
+			// Speed70
+			// 
+			this.Speed70.Appearance = System.Windows.Forms.Appearance.Button;
+			this.Speed70.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Speed70.Location = new System.Drawing.Point(6, 103);
+			this.Speed70.Name = "Speed70";
+			this.Speed70.Size = new System.Drawing.Size(176, 36);
+			this.Speed70.TabIndex = 16;
+			this.Speed70.Text = "70%";
+			this.Speed70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.Speed70.UseVisualStyleBackColor = true;
+			// 
+			// Speed80
+			// 
+			this.Speed80.Appearance = System.Windows.Forms.Appearance.Button;
+			this.Speed80.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Speed80.Location = new System.Drawing.Point(6, 145);
+			this.Speed80.Name = "Speed80";
+			this.Speed80.Size = new System.Drawing.Size(176, 36);
+			this.Speed80.TabIndex = 17;
+			this.Speed80.Text = "80%";
+			this.Speed80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.Speed80.UseVisualStyleBackColor = true;
+			// 
+			// Speed90
+			// 
+			this.Speed90.Appearance = System.Windows.Forms.Appearance.Button;
+			this.Speed90.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Speed90.Location = new System.Drawing.Point(6, 187);
+			this.Speed90.Name = "Speed90";
+			this.Speed90.Size = new System.Drawing.Size(176, 36);
+			this.Speed90.TabIndex = 18;
+			this.Speed90.Text = "90%";
+			this.Speed90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.Speed90.UseVisualStyleBackColor = true;
+			// 
+			// Speed100
+			// 
+			this.Speed100.Appearance = System.Windows.Forms.Appearance.Button;
+			this.Speed100.Checked = true;
+			this.Speed100.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Speed100.Location = new System.Drawing.Point(6, 229);
+			this.Speed100.Name = "Speed100";
+			this.Speed100.Size = new System.Drawing.Size(176, 36);
+			this.Speed100.TabIndex = 19;
+			this.Speed100.TabStop = true;
+			this.Speed100.Text = "100%";
+			this.Speed100.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.Speed100.UseVisualStyleBackColor = true;
+			// 
+			// Speed125
+			// 
+			this.Speed125.Appearance = System.Windows.Forms.Appearance.Button;
+			this.Speed125.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Speed125.Location = new System.Drawing.Point(6, 271);
+			this.Speed125.Name = "Speed125";
+			this.Speed125.Size = new System.Drawing.Size(176, 36);
+			this.Speed125.TabIndex = 20;
+			this.Speed125.Text = "125%";
+			this.Speed125.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.Speed125.UseVisualStyleBackColor = true;
+			// 
+			// Speed150
+			// 
+			this.Speed150.Appearance = System.Windows.Forms.Appearance.Button;
+			this.Speed150.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Speed150.Location = new System.Drawing.Point(6, 313);
+			this.Speed150.Name = "Speed150";
+			this.Speed150.Size = new System.Drawing.Size(176, 36);
+			this.Speed150.TabIndex = 21;
+			this.Speed150.Text = "150%";
+			this.Speed150.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.Speed150.UseVisualStyleBackColor = true;
+			// 
 			// MenuForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1008, 729);
+			this.Controls.Add(this.groupBox7);
 			this.Controls.Add(this.groupBox6);
 			this.Controls.Add(this.groupBox5);
 			this.Controls.Add(this.groupBox4);
@@ -298,10 +411,9 @@
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox3.ResumeLayout(false);
-			this.groupBox4.ResumeLayout(false);
-			this.groupBox4.PerformLayout();
 			this.groupBox5.ResumeLayout(false);
 			this.groupBox6.ResumeLayout(false);
+			this.groupBox7.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -320,7 +432,6 @@
 		public System.Windows.Forms.RadioButton KeyboardButton;
 		public System.Windows.Forms.RadioButton BassGuitarButton;
 		public System.Windows.Forms.RadioButton GuitarButton;
-		public System.Windows.Forms.CheckBox PauseCheckbox;
 		private System.Windows.Forms.GroupBox groupBox5;
 		private System.Windows.Forms.GroupBox groupBox6;
 		public System.Windows.Forms.RadioButton SevenStringButton;
@@ -328,6 +439,15 @@
 		public System.Windows.Forms.RadioButton FiveStringButton;
 		public System.Windows.Forms.ListBox ChannelsListBox;
 		public System.Windows.Forms.ListBox InstrumentsListBox;
+		private System.Windows.Forms.GroupBox groupBox7;
+		public System.Windows.Forms.RadioButton Speed150;
+		public System.Windows.Forms.RadioButton Speed125;
+		public System.Windows.Forms.RadioButton Speed100;
+		public System.Windows.Forms.RadioButton Speed90;
+		public System.Windows.Forms.RadioButton Speed80;
+		public System.Windows.Forms.RadioButton Speed70;
+		public System.Windows.Forms.RadioButton Speed60;
+		public System.Windows.Forms.RadioButton Speed50;
 	}
 }
 

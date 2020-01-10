@@ -16,6 +16,7 @@ namespace MidiHero
 		internal static bool Stopped;
 		internal static bool[] Playing;
 		internal static double MillisecondsPerBeat;
+		internal static double Speed = 1.0;
 
 		internal static System.Threading.Thread Thread;
 
@@ -80,7 +81,7 @@ namespace MidiHero
 
 				var microseconds = elapsed.Ticks * 0.1;
 				var beats = microseconds / MillisecondsPerBeat;
-				var ticks = beats * TicksPerBeat;
+				var ticks = beats * TicksPerBeat * Speed;
 
 				var playing = false;
 

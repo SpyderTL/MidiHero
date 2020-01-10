@@ -69,7 +69,6 @@ namespace MidiHero
 						e.Delay = (int)delay;
 
 						events.Add(e);
-
 						break;
 				}
 
@@ -172,64 +171,95 @@ namespace MidiHero
 				case 0x00:
 					reader.ReadBytes(length);
 					//return "Sequence Number";
+
+					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay });
 					break;
 
 				case 0x01:
 					var text = new string(reader.ReadChars(length));
 					//reader.ReadBytes(length);
 					//return "Text Event: " + text;
+
+					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay });
 					break;
 
 				case 0x02:
 					var copyright = new string(reader.ReadChars(length));
 					//reader.ReadBytes(length);
 					//return "Copyright Notice: " + copyright;
+
+					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay });
 					break;
 
 				case 0x03:
 					var name = new string(reader.ReadChars(length));
 					//return "Sequence/Track Name: " + name;
+
 					Song.Tracks[track].Name = name;
+
+					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay });
 					break;
 
 				case 0x04:
 					var instrument = new string(reader.ReadChars(length));
 					//reader.ReadBytes(length);
+
+					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay });
+
 					//return "Instrument Name: " + instrument;
 					break;
 
 				case 0x05:
 					var lyric = new string(reader.ReadChars(length));
+
+					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay });
+
 					//return "Lyric: " + lyric;
 					break;
 
 				case 0x06:
 					reader.ReadBytes(length);
+
+					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay });
+
 					//return "Marker";
 					break;
 
 				case 0x07:
 					reader.ReadBytes(length);
+
+					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay });
+
 					//return "Cue Point";
 					break;
 
 				case 0x20:
 					reader.ReadBytes(length);
+
+					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay });
+
 					//return "MIDI Channel Prefix";
 					break;
 
 				case 0x21:
-					var port = reader.ReadByte();
+					var data = reader.ReadBytes(length);
+					var port = data[0];
+
+					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay });
+
 					//return "MIDI Port Prefix:" + port;
 					break;
 
 				case 0x2F:
 					reader.ReadBytes(length);
+
+					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay });
+
 					//return "End Of Track";
 					break;
 
 				case 0x51:
-					var data = reader.ReadBytes(length);
+					data = reader.ReadBytes(length);
 					var tempo = (data[0] << 16) | (data[1] << 8) | data[2];
 
 					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.SetTempo, Value = tempo });
@@ -239,38 +269,56 @@ namespace MidiHero
 
 				case 0x54:
 					data = reader.ReadBytes(length);
+
 					var hours = data[0] & 0x1f;
 					var minutes = data[1];
 					var seconds = data[2];
 					var frames = data[3];
 					var subframes = data[4];
 
+					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay });
+
 					//events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay, Value = seconds * 1000 });
 					//return "SMTPE Offset";
 					break;
 
 				case 0x58:
-					var numerator = reader.ReadByte();
-					var denominator = reader.ReadByte();
-					var midiClocksPerTick = reader.ReadByte();
-					var thirtySecondNotes = reader.ReadByte();
+					data = reader.ReadBytes(length);
+
+					var numerator = data[0];
+					var denominator = data[1];
+					var midiClocksPerTick = data[2];
+					var thirtySecondNotes = data[3];
+
+					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay });
+
 					//return "Time Signature: " + numerator + "/" + denominator + " (" + midiClocksPerTick + ") [" + thirtySecondNotes + "]";
 					break;
 
 				case 0x59:
-					//reader.ReadBytes(length);
-					var key = reader.ReadSByte();
-					var minor = reader.ReadByte();
+					data = reader.ReadBytes(length);
+
+					var key = data[0];
+					var minor = data[1];
+
+					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay });
+
 					//return "Key Signature";
 					break;
 
 				case 0x7f:
-					reader.ReadBytes(length);
+					data = reader.ReadBytes(length);
+
+					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay });
+
 					//return "Sequencer Event";
 					break;
 
 				default:
-					reader.ReadBytes(length);
+					data = reader.ReadBytes(length);
+
+					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay });
+
 					break;
 			}
 		}

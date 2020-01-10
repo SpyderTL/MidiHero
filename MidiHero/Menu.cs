@@ -78,6 +78,23 @@ namespace MidiHero
 
 		private static void StartButton_Click(object sender, EventArgs e)
 		{
+			if (Form.Speed50.Checked)
+				SongPlayer.Speed = 0.5;
+			else if (Form.Speed60.Checked)
+				SongPlayer.Speed = 0.6;
+			else if (Form.Speed70.Checked)
+				SongPlayer.Speed = 0.7;
+			else if (Form.Speed80.Checked)
+				SongPlayer.Speed = 0.8;
+			else if (Form.Speed90.Checked)
+				SongPlayer.Speed = 0.9;
+			else if (Form.Speed100.Checked)
+				SongPlayer.Speed = 1.0;
+			else if (Form.Speed125.Checked)
+				SongPlayer.Speed = 1.25;
+			else if (Form.Speed150.Checked)
+				SongPlayer.Speed = 1.5;
+
 			SongPlayer.Play();
 
 			if (Form.GuitarButton.Checked)
