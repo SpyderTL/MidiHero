@@ -136,10 +136,21 @@ namespace MidiHero
 
 		private static void RestartButton_Click(object sender, EventArgs e)
 		{
-			Form.PlayButton.Visible = false;
-			Form.PauseButton.Visible = true;
-
 			SongPlayer.Stop();
+
+			for (var x = 0; x < Panels.Length; x++)
+			{
+				Panels[x].BackColor = Color.Gray;
+				Timers[x] = 0.0;
+			}
+
+			HiHat = false;
+			Rim = false;
+			Bell = false;
+			China = false;
+
+			Next = 0;
+
 			SongPlayer.Play();
 		}
 
@@ -147,7 +158,7 @@ namespace MidiHero
 		{
 			SongPlayer.Speed += 0.1;
 
-			Form.SpeedLabel.Text = "Speed: " + SongPlayer.Speed.ToString("P");
+			Form.SpeedLabel.Text = "Speed: " + SongPlayer.Speed.ToString("P0");
 		}
 
 		private static void DecreaseSpeedButton_Click(object sender, EventArgs e)
@@ -157,7 +168,7 @@ namespace MidiHero
 
 			SongPlayer.Speed -= 0.1;
 
-			Form.SpeedLabel.Text = "Speed: " + SongPlayer.Speed.ToString("P");
+			Form.SpeedLabel.Text = "Speed: " + SongPlayer.Speed.ToString("P0");
 		}
 
 		private static void Form_FormClosing(object sender, FormClosingEventArgs e)

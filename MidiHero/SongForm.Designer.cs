@@ -35,8 +35,8 @@
 			this.PauseButton = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.SpeedLabel = new System.Windows.Forms.ToolStripLabel();
-			this.DecreaseSpeedButton = new System.Windows.Forms.ToolStripButton();
 			this.IncreaseSpeedButton = new System.Windows.Forms.ToolStripButton();
+			this.DecreaseSpeedButton = new System.Windows.Forms.ToolStripButton();
 			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -77,6 +77,7 @@
 			this.PlayButton.Name = "PlayButton";
 			this.PlayButton.Size = new System.Drawing.Size(35, 28);
 			this.PlayButton.Text = "4";
+			this.PlayButton.ToolTipText = "Resume";
 			this.PlayButton.Visible = false;
 			// 
 			// PauseButton
@@ -88,6 +89,7 @@
 			this.PauseButton.Name = "PauseButton";
 			this.PauseButton.Size = new System.Drawing.Size(35, 28);
 			this.PauseButton.Text = ";";
+			this.PauseButton.ToolTipText = "Pause";
 			// 
 			// toolStripSeparator1
 			// 
@@ -100,17 +102,6 @@
 			this.SpeedLabel.Size = new System.Drawing.Size(73, 28);
 			this.SpeedLabel.Text = "Speed: 100%";
 			// 
-			// DecreaseSpeedButton
-			// 
-			this.DecreaseSpeedButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-			this.DecreaseSpeedButton.Font = new System.Drawing.Font("Webdings", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-			this.DecreaseSpeedButton.Image = ((System.Drawing.Image)(resources.GetObject("DecreaseSpeedButton.Image")));
-			this.DecreaseSpeedButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.DecreaseSpeedButton.Name = "DecreaseSpeedButton";
-			this.DecreaseSpeedButton.Size = new System.Drawing.Size(35, 28);
-			this.DecreaseSpeedButton.Text = "6";
-			this.DecreaseSpeedButton.ToolTipText = "Decrease Speed";
-			// 
 			// IncreaseSpeedButton
 			// 
 			this.IncreaseSpeedButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -121,6 +112,17 @@
 			this.IncreaseSpeedButton.Size = new System.Drawing.Size(35, 28);
 			this.IncreaseSpeedButton.Text = "5";
 			this.IncreaseSpeedButton.ToolTipText = "Increase Speed";
+			// 
+			// DecreaseSpeedButton
+			// 
+			this.DecreaseSpeedButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.DecreaseSpeedButton.Font = new System.Drawing.Font("Webdings", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+			this.DecreaseSpeedButton.Image = ((System.Drawing.Image)(resources.GetObject("DecreaseSpeedButton.Image")));
+			this.DecreaseSpeedButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.DecreaseSpeedButton.Name = "DecreaseSpeedButton";
+			this.DecreaseSpeedButton.Size = new System.Drawing.Size(35, 28);
+			this.DecreaseSpeedButton.Text = "6";
+			this.DecreaseSpeedButton.ToolTipText = "Decrease Speed";
 			// 
 			// SongForm
 			// 

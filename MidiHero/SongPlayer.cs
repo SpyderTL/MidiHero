@@ -42,6 +42,9 @@ namespace MidiHero
 		internal static void Stop()
 		{
 			Stopped = true;
+
+			while (Thread != null)
+				System.Threading.Thread.Sleep(10);
 		}
 
 		private static void Start()
