@@ -15,6 +15,8 @@ namespace MidiHero
 		{
 			Form = new MenuForm();
 
+			Form.Text = "Midi Hero v" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString(2);
+
 			Form.TrackListBox.SelectedIndexChanged += TrackListBox_SelectedIndexChanged;
 			Form.ChannelsListBox.SelectedIndexChanged += ChannelsListBox_SelectedIndexChanged; ;
 			Form.BrowseButton.Click += BrowseButton_Click;

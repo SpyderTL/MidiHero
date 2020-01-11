@@ -23,7 +23,8 @@ namespace MidiHero
 
 			Form = new SongForm();
 
-			Form.Text = Song.Name + " - Midi Hero v1.0";
+			Form.Text = Song.Name + " - Midi Hero v" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString(2);
+			Form.SpeedLabel.Text = "Speed: " + SongPlayer.Speed.ToString("P0");
 
 			Form.FormClosing += Form_FormClosing;
 			Form.PlayButton.Click += PlayButton_Click;
@@ -319,41 +320,5 @@ namespace MidiHero
 				Next++;
 			}
 		}
-
-		//internal static void Update()
-		//{
-		//	for (int x = 0; x < Guitar.Tuning.Length; x++)
-		//		for (int y = 0; y < 24; y++)
-		//			Panels[x, y].BackColor = Color.Gray;
-
-		//	if (SongPlayer.Playing[Track])
-		//	{
-		//		var next = SongPlayer.Next[Track];
-		//		var e = Song.Tracks[Track].Events[Math.Max(next - 1, 0)];
-
-		//		for (int x = 0; x < Guitar.Tuning.Length; x++)
-		//		{
-		//			if (e.Type == Song.EventType.NoteOn &&
-		//				e.Value2 != 0)
-		//			{
-		//				if (e.Value >= Guitar.Tuning[x] &&
-		//					e.Value < Guitar.Tuning[x] + 24)
-		//				{
-		//					Panels[x, e.Value - Guitar.Tuning[x]].BackColor = Color.Lime;
-		//					//break;
-		//				}
-		//			}
-		//			//else if (e.Type == Song.EventType.NoteOff)
-		//			//{
-		//			//	if (e.Value >= Guitar.Tuning[x] &&
-		//			//		e.Value < Guitar.Tuning[x] + 24)
-		//			//	{
-		//			//		Panels[x, e.Value - Guitar.Tuning[x]].BackColor = Color.Gray;
-		//			//		break;
-		//			//	}
-		//			//}
-		//		}
-		//	}
-		//}
 	}
 }

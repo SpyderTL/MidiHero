@@ -23,7 +23,8 @@ namespace MidiHero
 
 			Form = new SongForm();
 
-			Form.Text = Song.Name + " - Midi Hero v1.0";
+			Form.Text = Song.Name + " - Midi Hero v" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString(2);
+			Form.SpeedLabel.Text = "Speed: " + SongPlayer.Speed.ToString("P0");
 
 			Form.FormClosing += Form_FormClosing;
 			Form.PlayButton.Click += PlayButton_Click;
