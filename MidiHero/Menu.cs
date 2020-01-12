@@ -36,7 +36,9 @@ namespace MidiHero
 			for (var x = 0; x < Midi.Devices.Length; x++)
 				Form.OutputListBox.Items.Add(Midi.Devices[x].Item2);
 
-			if (Form.OutputListBox.Items.Count != 0)
+			if (Form.OutputListBox.Items.Count > 1)
+				Form.OutputListBox.SelectedIndex = 1;
+			else if (Form.OutputListBox.Items.Count > 0)
 				Form.OutputListBox.SelectedIndex = 0;
 		}
 
