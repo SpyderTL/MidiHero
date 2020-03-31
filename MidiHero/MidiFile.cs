@@ -148,7 +148,7 @@ namespace MidiHero
 				//return new ChannelPressure { Delay = delay, Channel = channel, Velocity = reader.ReadByte(), Unknown = 0 };
 
 				case 0xe:
-					return new Song.Event { Type = Song.EventType.PitchBend, Channel = channel, Value = reader.ReadByte() | (reader.ReadByte() << 7), Value2 = 0 };
+					return new Song.Event { Type = Song.EventType.PitchBend, Channel = channel, Value = reader.ReadByte() | (reader.ReadByte() << 8) };
 				//return new PitchBendChange { Delay = delay, Channel = channel, Value = BitConverter.ToUInt16(reader.ReadBytes(2).Reverse().ToArray(), 0) };
 
 				default:

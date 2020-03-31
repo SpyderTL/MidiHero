@@ -89,7 +89,7 @@ namespace MidiHero
 
 		internal static void PitchBend(int channel, int value)
 		{
-			var result = midiOutShortMsg(Handle, 0xE0u | (uint)channel | (((uint)value & 0x7f) << 8) | (((uint)(value >> 7) & 0x7f) << 16));
+			var result = midiOutShortMsg(Handle, 0xE0u | (uint)channel | (uint)(value << 8));
 		}
 
 		public static void Disable()
