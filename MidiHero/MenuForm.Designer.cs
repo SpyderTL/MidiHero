@@ -58,9 +58,11 @@
 			this.Speed50 = new System.Windows.Forms.RadioButton();
 			this.groupBox8 = new System.Windows.Forms.GroupBox();
 			this.OutputListBox = new System.Windows.Forms.ListBox();
+			this.LyricsCheckBox = new System.Windows.Forms.CheckBox();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
+			this.groupBox4.SuspendLayout();
 			this.groupBox5.SuspendLayout();
 			this.groupBox6.SuspendLayout();
 			this.groupBox7.SuspendLayout();
@@ -235,6 +237,7 @@
 			// 
 			// groupBox4
 			// 
+			this.groupBox4.Controls.Add(this.LyricsCheckBox);
 			this.groupBox4.Location = new System.Drawing.Point(212, 617);
 			this.groupBox4.Name = "groupBox4";
 			this.groupBox4.Size = new System.Drawing.Size(673, 100);
@@ -415,6 +418,18 @@
 			this.OutputListBox.Size = new System.Drawing.Size(182, 350);
 			this.OutputListBox.TabIndex = 5;
 			// 
+			// LyricsCheckBox
+			// 
+			this.LyricsCheckBox.AutoSize = true;
+			this.LyricsCheckBox.Enabled = false;
+			this.LyricsCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+			this.LyricsCheckBox.Location = new System.Drawing.Point(13, 19);
+			this.LyricsCheckBox.Name = "LyricsCheckBox";
+			this.LyricsCheckBox.Size = new System.Drawing.Size(88, 29);
+			this.LyricsCheckBox.TabIndex = 0;
+			this.LyricsCheckBox.Text = "Lyrics";
+			this.LyricsCheckBox.UseVisualStyleBackColor = true;
+			// 
 			// MenuForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -429,12 +444,14 @@
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.StartButton);
 			this.Controls.Add(this.groupBox1);
+			this.DoubleBuffered = true;
 			this.Name = "MenuForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Midi Hero v1.0";
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox3.ResumeLayout(false);
+			this.groupBox4.ResumeLayout(false);
+			this.groupBox4.PerformLayout();
 			this.groupBox5.ResumeLayout(false);
 			this.groupBox6.ResumeLayout(false);
 			this.groupBox7.ResumeLayout(false);
@@ -475,6 +492,7 @@
 		public System.Windows.Forms.RadioButton Speed50;
 		private System.Windows.Forms.GroupBox groupBox8;
 		public System.Windows.Forms.ListBox OutputListBox;
+		public System.Windows.Forms.CheckBox LyricsCheckBox;
 	}
 }
 

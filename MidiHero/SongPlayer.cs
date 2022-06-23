@@ -15,8 +15,10 @@ namespace MidiHero
 		internal static bool Paused;
 		internal static bool Stopped;
 		internal static bool[] Playing;
-		internal static double MillisecondsPerBeat;
+		internal static double MicrosecondsPerBeat;
 		internal static double Speed = 1.0;
+		internal static string[] Lyrics;
+		internal static int Word;
 
 		internal static System.Threading.Thread Thread;
 
@@ -56,16 +58,23 @@ namespace MidiHero
 			Next = new int[Tracks.Length];
 			Playing = new bool[Tracks.Length];
 
+			var lyrics = new List<string>();
+
 			for (var track = 0; track < Tracks.Length; track++)
 			{
 				if (Tracks[track].Events.Length != 0)
 				{
 					Playing[track] = true;
 					Timers[track] = Tracks[track].Events[0].Delay;
+
+					lyrics.AddRange(Tracks[track].Events.Where(x => x.Type == Song.EventType.Lyrics).Select(x => x.Lyrics));
 				}
 			}
 
-			MillisecondsPerBeat = 500000.0;
+			Lyrics = lyrics.ToArray();
+			Word = -1;
+
+			MicrosecondsPerBeat = 500000.0;
 
 			Midi.Enable();
 
@@ -85,7 +94,7 @@ namespace MidiHero
 				if (!Paused)
 				{
 					var microseconds = elapsed.Ticks * 0.1;
-					var beats = microseconds / MillisecondsPerBeat;
+					var beats = microseconds / MicrosecondsPerBeat;
 					var ticks = beats * TicksPerBeat * Speed;
 
 					var playing = false;
@@ -134,7 +143,11 @@ namespace MidiHero
 									break;
 
 								case Song.EventType.SetTempo:
-									MillisecondsPerBeat = e.Value;
+									MicrosecondsPerBeat = e.Value;
+									break;
+
+								case Song.EventType.Lyrics:
+									Word++;
 									break;
 							}
 

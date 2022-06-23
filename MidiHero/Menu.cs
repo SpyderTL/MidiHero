@@ -46,6 +46,11 @@ namespace MidiHero
 		{
 			Form.InstrumentsListBox.Items.Clear();
 
+			var lyrics = Song.Tracks[Form.TrackListBox.SelectedIndex].Events.Any(x => x.Type == Song.EventType.Lyrics);
+
+			Form.LyricsCheckBox.Enabled = lyrics;
+			Form.LyricsCheckBox.Checked = lyrics;
+
 			if ((int)Form.ChannelsListBox.SelectedItem == 9)
 				Form.InstrumentsListBox.Items.Add("Drums");
 			else
@@ -133,6 +138,12 @@ namespace MidiHero
 				GuitarForm.Track = Form.TrackListBox.SelectedIndex;
 				GuitarForm.Channel = (int)Form.ChannelsListBox.SelectedItem;
 				GuitarForm.Show();
+
+				if (Form.LyricsCheckBox.Checked)
+				{
+					LyricsForm.Form = GuitarForm.Form;
+					LyricsForm.Enable();
+				}
 			}
 			else if (Form.SevenStringButton.Checked)
 			{
@@ -150,6 +161,12 @@ namespace MidiHero
 				GuitarForm.Track = Form.TrackListBox.SelectedIndex;
 				GuitarForm.Channel = (int)Form.ChannelsListBox.SelectedItem;
 				GuitarForm.Show();
+
+				if (Form.LyricsCheckBox.Checked)
+				{
+					LyricsForm.Form = GuitarForm.Form;
+					LyricsForm.Enable();
+				}
 			}
 			else if (Form.EightStringButton.Checked)
 			{
@@ -168,6 +185,12 @@ namespace MidiHero
 				GuitarForm.Track = Form.TrackListBox.SelectedIndex;
 				GuitarForm.Channel = (int)Form.ChannelsListBox.SelectedItem;
 				GuitarForm.Show();
+
+				if (Form.LyricsCheckBox.Checked)
+				{
+					LyricsForm.Form = GuitarForm.Form;
+					LyricsForm.Enable();
+				}
 			}
 			else if (Form.BassGuitarButton.Checked)
 			{
@@ -182,6 +205,12 @@ namespace MidiHero
 				GuitarForm.Track = Form.TrackListBox.SelectedIndex;
 				GuitarForm.Channel = (int)Form.ChannelsListBox.SelectedItem;
 				GuitarForm.Show();
+
+				if (Form.LyricsCheckBox.Checked)
+				{
+					LyricsForm.Form = GuitarForm.Form;
+					LyricsForm.Enable();
+				}
 			}
 			else if (Form.FiveStringButton.Checked)
 			{
@@ -197,18 +226,36 @@ namespace MidiHero
 				GuitarForm.Track = Form.TrackListBox.SelectedIndex;
 				GuitarForm.Channel = (int)Form.ChannelsListBox.SelectedItem;
 				GuitarForm.Show();
+
+				if (Form.LyricsCheckBox.Checked)
+				{
+					LyricsForm.Form = GuitarForm.Form;
+					LyricsForm.Enable();
+				}
 			}
 			else if (Form.KeyboardButton.Checked)
 			{
 				KeyboardForm.Track = Form.TrackListBox.SelectedIndex;
 				KeyboardForm.Channel = (int)Form.ChannelsListBox.SelectedItem;
 				KeyboardForm.Show();
+
+				if (Form.LyricsCheckBox.Checked)
+				{
+					LyricsForm.Form = KeyboardForm.Form;
+					LyricsForm.Enable();
+				}
 			}
 			else if (Form.DrumsButton.Checked)
 			{
 				DrumsForm.Track = Form.TrackListBox.SelectedIndex;
 				DrumsForm.Channel = (int)Form.ChannelsListBox.SelectedItem;
 				DrumsForm.Show();
+
+				if (Form.LyricsCheckBox.Checked)
+				{
+					LyricsForm.Form = DrumsForm.Form;
+					LyricsForm.Enable();
+				}
 			}
 		}
 

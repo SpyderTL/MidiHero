@@ -212,7 +212,7 @@ namespace MidiHero
 				case 0x05:
 					var lyric = new string(reader.ReadChars(length));
 
-					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Delay });
+					events.Add(new Song.Event { Delay = delay, Type = Song.EventType.Lyrics, Lyrics = lyric });
 
 					//return "Lyric: " + lyric;
 					break;

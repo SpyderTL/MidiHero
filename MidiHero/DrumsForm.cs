@@ -14,7 +14,7 @@ namespace MidiHero
 		internal static int Track;
 		internal static int Channel;
 		internal static int Next;
-		internal static Panel[] Panels;
+		internal static Ellipse[] Panels;
 		internal static System.Threading.Timer Timer;
 		internal static double[] Timers = new double[8];
 		internal static bool HiHat;
@@ -38,16 +38,14 @@ namespace MidiHero
 			Form.IncreaseSpeedButton.Click += IncreaseSpeedButton_Click;
 			Form.DecreaseSpeedButton.Click += DecreaseSpeedButton_Click;
 
-			Form.Show();
-
-			Panels = new Panel[8];
+			Panels = new Ellipse[8];
 
 			// Bass Drum
 			Panels[0] = new Ellipse();
 
 			Panels[0].Location = new Point(412, 500);
 			Panels[0].Size = new Size(180, 180);
-			Panels[0].BackColor = Color.Gray;
+			Panels[0].ForeColor = Color.Gray;
 
 			Form.Controls.Add(Panels[0]);
 
@@ -56,7 +54,7 @@ namespace MidiHero
 
 			Panels[1].Location = new Point(430, 430);
 			Panels[1].Size = new Size(120, 60);
-			Panels[1].BackColor = Color.Gray;
+			Panels[1].ForeColor = Color.Gray;
 
 			Form.Controls.Add(Panels[1]);
 
@@ -65,7 +63,7 @@ namespace MidiHero
 
 			Panels[2].Location = new Point(410, 340);
 			Panels[2].Size = new Size(80, 55);
-			Panels[2].BackColor = Color.Gray;
+			Panels[2].ForeColor = Color.Gray;
 
 			Form.Controls.Add(Panels[2]);
 
@@ -74,7 +72,7 @@ namespace MidiHero
 
 			Panels[3].Location = new Point(510, 350);
 			Panels[3].Size = new Size(100, 70);
-			Panels[3].BackColor = Color.Gray;
+			Panels[3].ForeColor = Color.Gray;
 
 			Form.Controls.Add(Panels[3]);
 
@@ -83,7 +81,7 @@ namespace MidiHero
 
 			Panels[4].Location = new Point(600, 440);
 			Panels[4].Size = new Size(140, 90);
-			Panels[4].BackColor = Color.Gray;
+			Panels[4].ForeColor = Color.Gray;
 
 			Form.Controls.Add(Panels[4]);
 
@@ -92,7 +90,7 @@ namespace MidiHero
 
 			Panels[5].Location = new Point(300, 450);
 			Panels[5].Size = new Size(100, 35);
-			Panels[5].BackColor = Color.Gray;
+			Panels[5].ForeColor = Color.Gray;
 
 			Form.Controls.Add(Panels[5]);
 
@@ -101,7 +99,7 @@ namespace MidiHero
 
 			Panels[6].Location = new Point(305, 270);
 			Panels[6].Size = new Size(150, 30);
-			Panels[6].BackColor = Color.Gray;
+			Panels[6].ForeColor = Color.Gray;
 
 			Form.Controls.Add(Panels[6]);
 
@@ -110,9 +108,11 @@ namespace MidiHero
 
 			Panels[7].Location = new Point(545, 270);
 			Panels[7].Size = new Size(150, 30);
-			Panels[7].BackColor = Color.Gray;
+			Panels[7].ForeColor = Color.Gray;
 
 			Form.Controls.Add(Panels[7]);
+
+			Form.Show();
 
 			Next = 0;
 
@@ -141,7 +141,7 @@ namespace MidiHero
 
 			for (var x = 0; x < Panels.Length; x++)
 			{
-				Panels[x].BackColor = Color.Gray;
+				Panels[x].ForeColor = Color.Gray;
 				Timers[x] = 0.0;
 			}
 
@@ -214,9 +214,6 @@ namespace MidiHero
 
 				if (e.Channel == Channel)
 				{
-					//if (e.Type == Song.EventType.NoteOn)
-					//	System.Diagnostics.Debug.WriteLine(e.Value);
-
 					if (e.Value >= 35 &&
 						e.Value < 60)
 					{
@@ -265,31 +262,55 @@ namespace MidiHero
 					var color = (int)(Timers[drum] * 127.0);
 
 					if (Timers[drum] <= 0.0)
-						Panels[drum].BackColor = Color.Gray;
+						Panels[drum].ForeColor = Color.Gray;
 					else if (drum == 5 && HiHat)
-						Panels[drum].BackColor = Color.FromArgb(128 - color, 128 - color, 128 + color);
+						Panels[drum].ForeColor = Color.FromArgb(128 - color, 128 - color, 128 + color);
 					else if (drum == 1 && Rim)
-						Panels[drum].BackColor = Color.FromArgb(128 - color, 128 - color, 128 + color);
+						Panels[drum].ForeColor = Color.FromArgb(128 - color, 128 - color, 128 + color);
 					else if (drum == 6 && China)
-						Panels[drum].BackColor = Color.FromArgb(128 - color, 128 - color, 128 + color);
+						Panels[drum].ForeColor = Color.FromArgb(128 - color, 128 - color, 128 + color);
 					else if (drum == 7 && Bell)
-						Panels[drum].BackColor = Color.FromArgb(128 - color, 128 - color, 128 + color);
+						Panels[drum].ForeColor = Color.FromArgb(128 - color, 128 - color, 128 + color);
 					else
-						Panels[drum].BackColor = Color.FromArgb(128 - color, 128 + color, 128 - color);
+						Panels[drum].ForeColor = Color.FromArgb(128 - color, 128 + color, 128 - color);
 				}
 			}
 		}
 
-		internal class Ellipse : Panel
+		internal class Ellipse : PictureBox
 		{
-			protected override void OnPaintBackground(PaintEventArgs e)
+			public Ellipse()
 			{
-				var brush = new SolidBrush(BackColor);
+				BackColor = Color.Transparent;
+			}
 
-				e.Graphics.FillEllipse(brush, e.ClipRectangle);
+			protected override void OnPaint(PaintEventArgs e)
+			{
+				var brush = new SolidBrush(ForeColor);
+
+				//e.Graphics.FillRectangle(brush, e.ClipRectangle);
+
+				//brush.Color = ForeColor;
+
+				e.Graphics.FillEllipse(brush, DisplayRectangle);
 
 				brush.Dispose();
+
+				//base.OnPaint(e);
 			}
+
+			//protected override void OnPaintBackground(PaintEventArgs e)
+			//{
+			//	//var brush = new SolidBrush(BackColor);
+
+			//	//e.Graphics.FillRectangle(brush, e.ClipRectangle);
+
+			//	//brush.Color = ForeColor;
+
+			//	//e.Graphics.FillEllipse(brush, e.ClipRectangle);
+
+			//	//brush.Dispose();
+			//}
 		}
 
 		internal static int[] Drums = new int[]

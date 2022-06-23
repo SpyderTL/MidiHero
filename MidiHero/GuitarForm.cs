@@ -33,8 +33,6 @@ namespace MidiHero
 			Form.IncreaseSpeedButton.Click += IncreaseSpeedButton_Click;
 			Form.DecreaseSpeedButton.Click += DecreaseSpeedButton_Click;
 
-			Form.Show();
-
 			Panels = new Panel[Guitar.Tuning.Length, 24];
 
 			for (var x = 0; x < Guitar.Tuning.Length; x++)
@@ -53,6 +51,8 @@ namespace MidiHero
 					Panels[x, y] = panel;
 				}
 			}
+
+			Form.Show();
 
 			Next = 0;
 
@@ -147,6 +147,8 @@ namespace MidiHero
 
 				if (e.Channel == Channel)
 				{
+					Form.SuspendLayout();
+
 					for (int x = 0; x < Guitar.Tuning.Length; x++)
 					{
 						if (e.Type == Song.EventType.NoteOn)
@@ -168,6 +170,8 @@ namespace MidiHero
 							}
 						}
 					}
+
+					Form.ResumeLayout();
 				}
 
 				Next++;

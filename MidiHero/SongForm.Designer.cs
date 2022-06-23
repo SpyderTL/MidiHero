@@ -37,6 +37,7 @@
 			this.SpeedLabel = new System.Windows.Forms.ToolStripLabel();
 			this.IncreaseSpeedButton = new System.Windows.Forms.ToolStripButton();
 			this.DecreaseSpeedButton = new System.Windows.Forms.ToolStripButton();
+			this.LyricsTextBox = new System.Windows.Forms.TextBox();
 			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -124,16 +125,33 @@
 			this.DecreaseSpeedButton.Text = "6";
 			this.DecreaseSpeedButton.ToolTipText = "Decrease Speed";
 			// 
+			// LyricsTextBox
+			// 
+			this.LyricsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.LyricsTextBox.BackColor = System.Drawing.Color.Black;
+			this.LyricsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.LyricsTextBox.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.LyricsTextBox.ForeColor = System.Drawing.Color.White;
+			this.LyricsTextBox.Location = new System.Drawing.Point(12, 12);
+			this.LyricsTextBox.Multiline = true;
+			this.LyricsTextBox.Name = "LyricsTextBox";
+			this.LyricsTextBox.ReadOnly = true;
+			this.LyricsTextBox.Size = new System.Drawing.Size(984, 108);
+			this.LyricsTextBox.TabIndex = 1;
+			this.LyricsTextBox.Visible = false;
+			// 
 			// SongForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(1008, 747);
+			this.Controls.Add(this.LyricsTextBox);
 			this.Controls.Add(this.toolStrip1);
+			this.DoubleBuffered = true;
 			this.Name = "SongForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Midi Hero v1.0";
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
 			this.ResumeLayout(false);
@@ -151,5 +169,6 @@
 		public System.Windows.Forms.ToolStripButton IncreaseSpeedButton;
 		public System.Windows.Forms.ToolStripButton DecreaseSpeedButton;
 		public System.Windows.Forms.ToolStripLabel SpeedLabel;
+		public System.Windows.Forms.TextBox LyricsTextBox;
 	}
 }

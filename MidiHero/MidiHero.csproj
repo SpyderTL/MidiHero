@@ -25,12 +25,13 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -50,6 +51,7 @@
     <Compile Include="DrumsForm.cs" />
     <Compile Include="KeyboardForm.cs" />
     <Compile Include="GuitarForm.cs" />
+    <Compile Include="LyricsForm.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>

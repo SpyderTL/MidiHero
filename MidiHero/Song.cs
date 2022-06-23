@@ -25,6 +25,7 @@ namespace MidiHero
 			internal EventType Type;
 			internal int Value;
 			internal int Value2;
+			internal string Lyrics;
 		}
 
 		internal enum EventType
@@ -37,7 +38,8 @@ namespace MidiHero
 			SetTempo,
 			Delay,
 			ChannelPressure,
-			KeyPressure
+			KeyPressure,
+			Lyrics
 		}
 	}
 }

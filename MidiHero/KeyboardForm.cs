@@ -33,8 +33,6 @@ namespace MidiHero
 			Form.IncreaseSpeedButton.Click += IncreaseSpeedButton_Click;
 			Form.DecreaseSpeedButton.Click += DecreaseSpeedButton_Click;
 
-			Form.Show();
-
 			Panels = new Panel[88];
 			var panels = new List<Panel>();
 
@@ -148,6 +146,8 @@ namespace MidiHero
 			}
 
 			Form.Controls.AddRange(panels.ToArray());
+
+			Form.Show();
 
 			Next = 0;
 
@@ -265,6 +265,8 @@ namespace MidiHero
 
 				if(Channel == e.Channel)
 				{
+					Form.SuspendLayout();
+
 					if (e.Type == Song.EventType.NoteOn)
 					{
 						if (e.Value >= 21 &&
@@ -315,6 +317,8 @@ namespace MidiHero
 							}
 						}
 					}
+
+					Form.ResumeLayout();
 				}
 
 				Next++;
